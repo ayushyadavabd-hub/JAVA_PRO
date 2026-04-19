@@ -1,0 +1,21 @@
+{
+  "name": "university-teacher-feedback-manager",
+  "version": "1.0.0",
+  "description": "A full-stack University Teacher Feedback Manager with animated UI and Java OOP domain model.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node src/server.js"
+  },
+  "keywords": [
+    "feedback",
+    "university",
+    "nodejs",
+    "java-oop"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

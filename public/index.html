@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>University Teacher Feedback Manager</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-one"></div>
+    <div class="bg-orb orb-two"></div>
+    <div class="grid-overlay"></div>
+
+    <header class="hero reveal">
+      <div class="hero-glow"></div>
+      <p class="tag">Academic Excellence Suite</p>
+      <h1>University Teacher Feedback Manager</h1>
+      <p class="subtitle">
+        Collect meaningful teacher feedback, surface trends instantly, and
+        elevate classroom quality with a premium analytics experience.
+      </p>
+      <a href="#feedback-form" class="hero-cta">Submit Feedback</a>
+    </header>
+
+    <main>
+      <section class="dashboard reveal" id="analytics-panel">
+        <article class="metric-card">
+          <h3>Total Feedback</h3>
+          <p id="metric-total">0</p>
+        </article>
+        <article class="metric-card">
+          <h3>Average Rating</h3>
+          <p id="metric-average">0.00</p>
+        </article>
+        <article class="metric-card">
+          <h3>Recommendation Rate</h3>
+          <p id="metric-recommend">0%</p>
+        </article>
+        <article class="metric-card">
+          <h3>Most Reviewed Teacher</h3>
+          <p id="metric-top-teacher">N/A</p>
+        </article>
+      </section>
+
+      <section class="panel reveal" id="feedback-form">
+        <h2>Submit New Feedback</h2>
+        <form id="teacherFeedbackForm">
+          <div class="input-grid">
+            <label>
+              Teacher Name
+              <input
+                type="text"
+                name="teacherName"
+                placeholder="Dr. Meera Gupta"
+                required
+                minlength="3"
+              />
+            </label>
+            <label>
+              Course Code
+              <input
+                type="text"
+                name="courseCode"
+                placeholder="CS501"
+                required
+                minlength="4"
+              />
+            </label>
+            <label>
+              Student Year
+              <input
+                type="number"
+                name="studentYear"
+                min="1"
+                max="6"
+                required
+              />
+            </label>
+            <label>
+              Rating (1-5)
+              <input
+                type="number"
+                name="rating"
+                min="1"
+                max="5"
+                step="1"
+                required
+              />
+            </label>
+          </div>
+          <label>
+            Feedback Comment
+            <textarea
+              name="comment"
+              rows="4"
+              minlength="10"
+              placeholder="How was the teaching quality, communication, and engagement?"
+              required
+            ></textarea>
+          </label>
+
+          <label class="checkbox-row">
+            <input type="checkbox" name="recommend" />
+            I recommend this teacher for future batches.
+          </label>
+
+          <button type="submit">Submit Feedback</button>
+          <p id="form-status" class="form-status"></p>
+        </form>
+      </section>
+
+      <section class="panel reveal">
+        <div class="panel-heading">
+          <h2>Feedback Explorer</h2>
+          <div class="filters">
+            <input
+              type="text"
+              id="teacherFilter"
+              placeholder="Filter by teacher"
+            />
+            <select id="ratingFilter">
+              <option value="">All Ratings</option>
+              <option value="5">5 and above</option>
+              <option value="4">4 and above</option>
+              <option value="3">3 and above</option>
+            </select>
+          </div>
+        </div>
+        <div id="feedback-list" class="feedback-list"></div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
