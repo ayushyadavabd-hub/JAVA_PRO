@@ -10,6 +10,7 @@ A full-stack feedback platform with:
 
 - Submit teacher feedback with validation
 - Filter feedback by teacher and minimum rating
+- Runtime Java OOP analytics integration (Node calls Java for analytics)
 - Live analytics cards:
   - Total feedback
   - Average rating
@@ -36,7 +37,7 @@ A full-stack feedback platform with:
 - `GET /api/health`
 - `GET /api/feedback?teacher=...&minRating=...`
 - `POST /api/feedback`
-- `GET /api/analytics`
+- `GET /api/analytics` (computed by Java OOP bridge with Node fallback)
 
 Example POST payload:
 
